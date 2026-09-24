@@ -357,31 +357,204 @@
     </mxGraphModel>
   </diagram>
   <diagram id="HkOMjClzPcfuYqr4AI-Z" name="03_Cross_Monitoring">
-    <mxGraphModel dx="1414" dy="822" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0" adaptiveColors="none">
+    <mxGraphModel dx="1814" dy="1222" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0" adaptiveColors="none">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="cg3DICqHznoVMZnwv4kC-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="330" width="410" x="108" y="-15" as="geometry" />
+        </mxCell>
+        <mxCell id="VaKgf1OJh9ikREy0Kaii-1" parent="1" style="text;html=1;whiteSpace=wrap;fillColor=#fad7ac;align=center;verticalAlign=middle;rounded=0;strokeColor=#b46504;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Figure 3 - Feedback and Diagnostic Signals&amp;nbsp;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="330" x="-367" y="-119" as="geometry" />
+        </mxCell>
+        <mxCell id="cg3DICqHznoVMZnwv4kC-2" edge="1" parent="1" source="VaKgf1OJh9ikREy0Kaii-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=3;fillColor=#d5e8d4;gradientColor=#97d077;strokeColor=#82b366;" target="jERe10YCWGITCc0r7N6C-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VaKgf1OJh9ikREy0Kaii-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;gradientColor=#b3b3b3;strokeColor=#666666;" value="Joint Encoder&lt;div&gt;(Knee Position)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="48" width="210" x="-202" y="-13" as="geometry" />
+        </mxCell>
+        <mxCell id="cg3DICqHznoVMZnwv4kC-4" edge="1" parent="1" source="iFixlIBTW5bP6_3bIi43-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=3;fillColor=#d5e8d4;gradientColor=#97d077;strokeColor=#82b366;" target="jERe10YCWGITCc0r7N6C-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="71" y="97" />
+              <mxPoint x="71" y="182" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iFixlIBTW5bP6_3bIi43-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;gradientColor=#b3b3b3;strokeColor=#666666;" value="Motor Encoder&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="48" width="210" x="-200" y="73" as="geometry" />
+        </mxCell>
+        <mxCell id="cg3DICqHznoVMZnwv4kC-5" edge="1" parent="1" source="iFixlIBTW5bP6_3bIi43-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=3;fillColor=#d5e8d4;gradientColor=#97d077;strokeColor=#82b366;" target="jERe10YCWGITCc0r7N6C-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iFixlIBTW5bP6_3bIi43-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;gradientColor=#b3b3b3;strokeColor=#666666;" value="Current Sensors&lt;div&gt;(motor current)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="48" width="210" x="-202" y="158" as="geometry" />
+        </mxCell>
+        <mxCell id="cg3DICqHznoVMZnwv4kC-3" edge="1" parent="1" source="iFixlIBTW5bP6_3bIi43-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=3;fillColor=#d5e8d4;gradientColor=#97d077;strokeColor=#82b366;" target="cg3DICqHznoVMZnwv4kC-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cg3DICqHznoVMZnwv4kC-7" edge="1" parent="1" source="iFixlIBTW5bP6_3bIi43-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=3;fillColor=#d5e8d4;gradientColor=#97d077;strokeColor=#82b366;" target="jERe10YCWGITCc0r7N6C-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iFixlIBTW5bP6_3bIi43-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;gradientColor=#b3b3b3;strokeColor=#666666;" value="Temperature Sensors&lt;div&gt;(Motor / Inverter)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="48" width="210" x="-202" y="332" as="geometry" />
+        </mxCell>
+        <mxCell id="cg3DICqHznoVMZnwv4kC-6" edge="1" parent="1" source="iFixlIBTW5bP6_3bIi43-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=3;fillColor=#d5e8d4;gradientColor=#97d077;strokeColor=#82b366;" target="jERe10YCWGITCc0r7N6C-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iFixlIBTW5bP6_3bIi43-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;gradientColor=#b3b3b3;strokeColor=#666666;" value="Voltage Sensors&lt;div&gt;(DC Link voltage)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="48" width="210" x="-202" y="245" as="geometry" />
+        </mxCell>
+        <mxCell id="jERe10YCWGITCc0r7N6C-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Local Joint Controller&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="136" y="152" as="geometry" />
+        </mxCell>
+        <mxCell id="cg3DICqHznoVMZnwv4kC-9" edge="1" parent="1" source="cg3DICqHznoVMZnwv4kC-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=3;fillColor=#d5e8d4;gradientColor=#97d077;strokeColor=#82b366;" target="jERe10YCWGITCc0r7N6C-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cg3DICqHznoVMZnwv4kC-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Safety Monitor&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="125" x="338" y="152" as="geometry" />
+        </mxCell>
+        <mxCell id="cg3DICqHznoVMZnwv4kC-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Knee Joint System (simplified)" vertex="1">
+          <mxGeometry height="30" width="138" x="252" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="CbDwUrXXF8oND8gp6xsa" name="04_Fault_Reaction">
-    <mxGraphModel dx="1414" dy="822" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0" adaptiveColors="none">
+    <mxGraphModel dx="1218" dy="665" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0" adaptiveColors="none">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="QtGar1m3FITsYRzm9pWo-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;gradientColor=#b3b3b3;strokeColor=#666666;" value="Normal Operation" vertex="1">
+          <mxGeometry height="60" width="120" x="-222" y="284" as="geometry" />
+        </mxCell>
+        <mxCell id="QtGar1m3FITsYRzm9pWo-3" edge="1" parent="1" source="QtGar1m3FITsYRzm9pWo-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;" target="QtGar1m3FITsYRzm9pWo-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QtGar1m3FITsYRzm9pWo-4" connectable="0" parent="QtGar1m3FITsYRzm9pWo-3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;No&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.5344" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QtGar1m3FITsYRzm9pWo-6" edge="1" parent="1" source="QtGar1m3FITsYRzm9pWo-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="QtGar1m3FITsYRzm9pWo-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QtGar1m3FITsYRzm9pWo-7" connectable="0" parent="QtGar1m3FITsYRzm9pWo-6" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Yes&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.6727" y="1" as="geometry">
+            <mxPoint y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QtGar1m3FITsYRzm9pWo-2" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fillColor=#dae8fc;gradientColor=#7ea6e0;strokeColor=#6c8ebf;" value="Fault Detected?" vertex="1">
+          <mxGeometry height="99" width="92" x="-74" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="DhAyBA9UVYV3iIMl9om7-3" edge="1" parent="1" source="QtGar1m3FITsYRzm9pWo-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="DhAyBA9UVYV3iIMl9om7-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DhAyBA9UVYV3iIMl9om7-4" connectable="0" parent="DhAyBA9UVYV3iIMl9om7-3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Yes&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.1644" y="-2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QtGar1m3FITsYRzm9pWo-5" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fillColor=#dae8fc;gradientColor=#7ea6e0;strokeColor=#6c8ebf;" value="Is Normal Control still trusted?" vertex="1">
+          <mxGeometry height="90" width="107" x="18" y="269" as="geometry" />
+        </mxCell>
+        <mxCell id="OraYp0JVYkRfbYnrFwjq-1" parent="1" style="text;html=1;whiteSpace=wrap;fillColor=#fad7ac;align=center;verticalAlign=middle;rounded=0;strokeColor=#b46504;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Figure 6 - Fault-Reaction Decision Concept&amp;nbsp;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="330" x="-190" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="OraYp0JVYkRfbYnrFwjq-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;gradientColor=#b3b3b3;strokeColor=#666666;" value="&lt;b&gt;Independent Reaction + Report to Robot-Level Supervisor&lt;/b&gt;&lt;div&gt;(e.g: Torque disable, power isolation)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="263" x="-68" y="402" as="geometry" />
+        </mxCell>
+        <mxCell id="DhAyBA9UVYV3iIMl9om7-1" edge="1" parent="1" source="QtGar1m3FITsYRzm9pWo-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.529;entryY=0.033;entryDx=0;entryDy=0;entryPerimeter=0;" target="OraYp0JVYkRfbYnrFwjq-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DhAyBA9UVYV3iIMl9om7-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;gradientColor=#b3b3b3;strokeColor=#666666;" value="&lt;b&gt;Degraded Reaction&lt;/b&gt;&lt;div&gt;(e.g: Torque limit, controlled stop)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="263" x="271" y="284" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="D7uLnDDG5yegKJMFDpfg" name="05_FTA">
-    <mxGraphModel dx="1414" dy="822" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0" adaptiveColors="none">
+    <mxGraphModel grid="0" page="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0" adaptiveColors="none">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="XgfvZT30ZtMhaWS3ljej-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0a30a;fontColor=#000000;strokeColor=#BD7000;" value="HE-01&lt;div&gt;Hazardous unintended knee motion&lt;/div&gt;" vertex="1">
+          <mxGeometry height="66" width="226" x="29" y="-18" as="geometry" />
+        </mxCell>
+        <mxCell id="XgfvZT30ZtMhaWS3ljej-7" edge="1" parent="1" source="XgfvZT30ZtMhaWS3ljej-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="XgfvZT30ZtMhaWS3ljej-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XgfvZT30ZtMhaWS3ljej-22" edge="1" parent="1" source="XgfvZT30ZtMhaWS3ljej-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;exitPerimeter=0;" target="XgfvZT30ZtMhaWS3ljej-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XgfvZT30ZtMhaWS3ljej-3" parent="1" style="shape=or;whiteSpace=wrap;html=1;shapeInside=1;rotation=-90;fillColor=#dae8fc;gradientColor=#7ea6e0;strokeColor=#6c8ebf;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="60" x="112" y="76" as="geometry" />
+        </mxCell>
+        <mxCell id="XgfvZT30ZtMhaWS3ljej-23" edge="1" parent="1" source="XgfvZT30ZtMhaWS3ljej-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" target="XgfvZT30ZtMhaWS3ljej-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XgfvZT30ZtMhaWS3ljej-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0a30a;fontColor=#000000;strokeColor=#BD7000;" value="A. Hazardous Actuator&amp;nbsp;&lt;div&gt;Behaviour&lt;/div&gt;" vertex="1">
+          <mxGeometry height="66" width="226" x="-160.5" y="204" as="geometry" />
+        </mxCell>
+        <mxCell id="XgfvZT30ZtMhaWS3ljej-35" edge="1" parent="1" source="XgfvZT30ZtMhaWS3ljej-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" target="XgfvZT30ZtMhaWS3ljej-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XgfvZT30ZtMhaWS3ljej-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0a30a;fontColor=#000000;strokeColor=#BD7000;" value="B. Safety Mitigation Failure" vertex="1">
+          <mxGeometry height="66" width="226" x="248" y="199" as="geometry" />
+        </mxCell>
+        <mxCell id="XgfvZT30ZtMhaWS3ljej-9" parent="1" style="shape=dataStorage;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;rotation=90;fillColor=#d5e8d4;gradientColor=#97d077;strokeColor=#82b366;" value="" vertex="1">
+          <mxGeometry height="65.5" width="72.5" x="-83.75" y="299.5" as="geometry" />
+        </mxCell>
+        <mxCell id="XgfvZT30ZtMhaWS3ljej-10" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#b1ddf0;strokeColor=#10739e;" value="&lt;b&gt;A1&lt;/b&gt;&lt;div&gt;Incorrect command / Control Output&lt;/div&gt;" vertex="1">
+          <mxGeometry height="93" width="93" x="-261" y="411" as="geometry" />
+        </mxCell>
+        <mxCell id="XgfvZT30ZtMhaWS3ljej-11" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#b1ddf0;strokeColor=#10739e;" value="&lt;b&gt;A2&lt;/b&gt;&lt;div&gt;Motor Control / inverter fault&lt;/div&gt;" vertex="1">
+          <mxGeometry height="93" width="93" x="-93.5" y="411" as="geometry" />
+        </mxCell>
+        <mxCell id="XgfvZT30ZtMhaWS3ljej-12" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#b1ddf0;strokeColor=#10739e;" value="&lt;b&gt;A3&lt;/b&gt;&lt;div&gt;Encoder / Current - feedback fault&lt;/div&gt;" vertex="1">
+          <mxGeometry height="93" width="93" x="73" y="411" as="geometry" />
+        </mxCell>
+        <mxCell id="XgfvZT30ZtMhaWS3ljej-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="AND" vertex="1">
+          <mxGeometry height="30" width="60" x="112" y="107" as="geometry" />
+        </mxCell>
+        <mxCell id="XgfvZT30ZtMhaWS3ljej-17" edge="1" parent="1" source="XgfvZT30ZtMhaWS3ljej-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="XgfvZT30ZtMhaWS3ljej-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XgfvZT30ZtMhaWS3ljej-20" edge="1" parent="1" source="XgfvZT30ZtMhaWS3ljej-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="XgfvZT30ZtMhaWS3ljej-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XgfvZT30ZtMhaWS3ljej-21" edge="1" parent="1" source="XgfvZT30ZtMhaWS3ljej-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="XgfvZT30ZtMhaWS3ljej-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XgfvZT30ZtMhaWS3ljej-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="OR" vertex="1">
+          <mxGeometry height="30" width="60" x="-77.5" y="317.25" as="geometry" />
+        </mxCell>
+        <mxCell id="XgfvZT30ZtMhaWS3ljej-31" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#b1ddf0;strokeColor=#10739e;" value="&lt;b&gt;B1&lt;/b&gt;&lt;div&gt;Safety Monitor fails to detect&lt;/div&gt;" vertex="1">
+          <mxGeometry height="93" width="93" x="242" y="411" as="geometry" />
+        </mxCell>
+        <mxCell id="XgfvZT30ZtMhaWS3ljej-32" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#b1ddf0;strokeColor=#10739e;" value="&lt;b&gt;B2&lt;/b&gt;&lt;div&gt;Independent Torque-disable path fails&lt;/div&gt;" vertex="1">
+          <mxGeometry height="93" width="93" x="409.5" y="411" as="geometry" />
+        </mxCell>
+        <mxCell id="XgfvZT30ZtMhaWS3ljej-33" parent="1" style="shape=dataStorage;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;rotation=90;fillColor=#d5e8d4;gradientColor=#97d077;strokeColor=#82b366;" value="" vertex="1">
+          <mxGeometry height="65.5" width="72.5" x="324.75" y="299.5" as="geometry" />
+        </mxCell>
+        <mxCell id="XgfvZT30ZtMhaWS3ljej-36" edge="1" parent="1" source="XgfvZT30ZtMhaWS3ljej-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" target="XgfvZT30ZtMhaWS3ljej-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XgfvZT30ZtMhaWS3ljej-37" edge="1" parent="1" source="XgfvZT30ZtMhaWS3ljej-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="XgfvZT30ZtMhaWS3ljej-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XgfvZT30ZtMhaWS3ljej-34" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="OR" vertex="1">
+          <mxGeometry height="30" width="60" x="331" y="317.25" as="geometry" />
+        </mxCell>
+        <mxCell id="cOopqfWCcMWqhuHl0iTY-1" parent="1" style="text;html=1;whiteSpace=wrap;fillColor=#fad7ac;align=center;verticalAlign=middle;rounded=0;strokeColor=#b46504;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Figure 5 - Simplified Fault Tree Analysis&amp;nbsp;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="330" x="-281" y="-70" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="fF7lZGl7Tk8-pTbJxePP" name="Page-6">
-    <mxGraphModel dx="1814" dy="822" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1218" dy="665" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
