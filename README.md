@@ -6,6 +6,19 @@ The project follows the chain from system definition to verification for one sel
 
 **HE-01 — Unintended or excessive knee motion while the humanoid is load-bearing and operating close to a person.**
 
+## Standards Reference
+
+The safety concept is informed by relevant machinery and drive functional-safety principles, including:
+
+- **IEC 61800-5-2** — Safely-Limited Speed (SLS), Safe Stop 1 (SS1) and Safe Torque Off (STO)
+- **ISO 13849-1** — safety-related control architecture, Category and Performance Level concepts
+
+**FSR-01 / FSR-02 — Joint velocity monitoring and reaction** are conceptually aligned with **Safely-Limited Speed (SLS)**.
+
+**FSR-09 — Independent safety reaction path** provides the architectural basis for drive-level safety functions such as **SS1 or STO**, depending on the remaining trustworthy control capability and required fault reaction.
+
+A **Category 3 / PL d** architecture is considered as a possible future design target. This has not been derived, implemented or validated in the current demonstrator.
+
 ## What is covered
 
 - system boundary and assumptions
