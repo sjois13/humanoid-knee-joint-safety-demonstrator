@@ -27,17 +27,17 @@ A key point in the safety concept is that immediate torque removal is not always
 
 ## Documents
 
-- [01 — System Definition](docs/01_System_Definition.pdf)
-- [02 — System Architecture](docs/02_System_Architecture.pdf)
-- [03 — Hazard Analysis](docs/03_Hazard_Analysis.pdf)
-- [04 — Safety Requirements](docs/04_Safety_Requirements.pdf)
-- [05 — FMEA and FTA](docs/05_FMEA_FTA.pdf)
-- [06 — Safety Concept, Traceability and V&V](docs/06_Safety_Concept_Traceability_V&V.pdf)
+- [01 — System Definition](docs/01_System_Definition.md)
+- [02 — System Architecture](docs/02_System_Architecture.md)
+- [03 — Hazard Analysis](docs/03_Hazard_Analysis.md)
+- [04 — Safety Requirements](docs/04_Safety_Requirements.md)
+- [05 — FMEA and FTA](docs/05_FMEA_FTA.md)
+- [06 — Safety Concept, Traceability and V&V](docs/06_Safety_Concept_Traceability_VV.md)
 
 Supporting files:
 
 - [`analysis/`](analysis/) — focused FMEA
-- [`diagrams/`](diagrams/) — architecture and fault-tree figures
+- [`figures/`](figures/) — architecture and fault-tree figures
 
 ## Status
 
@@ -47,5 +47,4 @@ Diagnostic thresholds, reaction times, quantitative reliability analysis and phy
 
 ## Tools
 
-Engineering content was developed through system-level analysis, study and iteration. 
-AI tools were used purely as a support for documentation structure and presentation purposes only.
+Engineering content was developed through system-level analysis, study and iteration. AI tools were used purely as a support for documentation structure and presentation purposes only.
