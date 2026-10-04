@@ -61,7 +61,7 @@ Safety mitigation failure may result from:
 - failure of the Safety Monitor to detect the unsafe condition
 - failure of the independent torque-inhibit path to stop hazardous torque
 
-![Figure 5 — Simplified Fault Tree Analysis](../figures/05_fault_tree.png)
+![Figure 5 — Simplified Fault Tree Analysis](../diagrams/05_fault_tree.png)
 
 ## 5.6 Dependent and Common-Cause Failures
 
