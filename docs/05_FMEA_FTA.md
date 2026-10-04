@@ -1,74 +1,110 @@
 # 5. FMEA and Fault Tree Analysis
 
-This section examines how faults in the knee-joint architecture can contribute to HE-01: hazardous unintended knee motion while the joint is load-bearing. The analysis is deliberately focused on the failure paths that matter to the demonstrator rather than attempting a complete production FMEA or FMEDA.
+This section examines how faults in the knee-joint architecture can contribute to HE-01: hazardous unintended knee motion while the joint is load-bearing.
+
+The analysis focuses on failure paths that can create hazardous actuator behaviour, prevent its detection, or prevent the intended safety reaction.
 
 ## 5.1 Analysis Scope
 
-The analysis covers failures across sensing, communication, control, power electronics, mechanical transmission and the safety-reaction path. The aim is to understand how a local failure can propagate to hazardous joint behaviour and where detection or mitigation can interrupt that propagation.
+The analysis covers failures across:
 
-A failure mode is retained in the portfolio analysis only when it contributes directly to HE-01, affects the ability to detect HE-01, or affects the ability to mitigate it. This keeps the analysis aligned with the project scope.
+- sensing
+- communication
+- local control
+- motor control and power electronics
+- mechanical transmission
+- safety monitoring
+- fault-reaction functions
+
+A failure mode is included when it can contribute directly to HE-01 or reduce the ability to detect or mitigate it.
 
 ## 5.2 FMEA Method
 
 The focused FMEA uses the following reasoning chain:
 
-**Failure Mode → Local Effect → System Effect → Detection → Fault Reaction**
+**Failure Mode → Effect on Joint / System → Detection → Fault Reaction**
 
-The distinction between local and system effect is important. The local effect describes what changes around the failed item. The system effect describes how that change can influence the knee joint or contribute to the hazardous event.
+The analysis concentrates on how each failure can influence physical knee behaviour and which monitoring or reaction mechanism is intended to interrupt the fault propagation.
 
 ## 5.3 FMEA Observations
 
-- Sensor faults can be hazardous even when the sensor output remains plausible.
-- Incorrect current feedback can result in either excessive torque or unintended torque reduction, depending on the failure direction.
-- Motor-side and joint-side encoders provide different information and therefore support useful cross-checking across the gearbox.
-- A local controller failure is more critical when the same controller is also required to execute the only available safety reaction.
-- Power-stage faults can cause physical torque to differ from software intent, so monitoring only commands is insufficient.
-- Mechanical transmission faults remain safety-relevant even when all electronics operate correctly.
-- The safety monitor and independent torque-disable path must themselves be considered in the failure analysis.
+- A sensor fault can remain hazardous even when the reported value is still plausible.
+- Shared sensing between control and monitoring can create common dependencies.
+- Motor-side and joint-side encoders support useful plausibility checking across the transmission, but a mismatch does not necessarily identify which element has failed.
+- Incorrect current feedback can cause actual torque to differ from the intended torque.
+- A controller failure is more critical when the same controller is also required to execute the only available safety reaction.
+- Power-stage faults can cause physical torque to differ from software intent.
+- An unsafe command may be executed correctly, so command-versus-response monitoring alone is not sufficient.
+- Mechanical transmission faults remain safety-relevant even when the electrical control path operates correctly.
+- The Safety Monitor and independent torque-inhibit path must themselves be supervised for latent failures.
 
 ## 5.4 Fault Tree Analysis Approach
 
-The FTA complements the FMEA by starting from the hazardous system behaviour and reasoning backward toward possible causes. The tree is intentionally small and is used to show the main causal structure rather than quantify top-event probability.
+The FTA starts from HE-01 and works backward toward the main combinations of failures that can produce the hazardous event.
+
+The tree is qualitative and intentionally simplified. It is used to show the main safety argument rather than calculate a top-event probability.
 
 ## 5.5 Fault Tree Structure
 
-The top event, HE-01, requires both:
+The top event, HE-01, is represented by:
 
-**Hazardous actuator behaviour AND failure of the available safety mitigation.**
+**Hazardous actuator behaviour AND failure of the available safety mitigation**
 
-Hazardous actuator behaviour may result from incorrect command/control output, motor-control or inverter faults, or incorrect feedback.
+Hazardous actuator behaviour may result from:
 
-Safety mitigation failure may result from failure of the Safety Monitor or the independent torque-disable path.
+- incorrect command or control output
+- motor-control or inverter fault
+- incorrect encoder or current feedback
+
+Safety mitigation failure may result from:
+
+- failure of the Safety Monitor to detect the unsafe condition
+- failure of the independent torque-inhibit path to stop hazardous torque
 
 ![Figure 5 — Simplified Fault Tree Analysis](../figures/05_fault_tree.png)
 
+## 5.6 Dependent and Common-Cause Failures
+
+The top-level AND gate represents the intended safety concept, but it does not by itself prove independence between the control and safety paths.
+
+A common fault such as shared power, clock, processor resources or communication infrastructure could affect both the initiating path and the safety mechanism.
+
+These dependent and common-cause failures are not fully developed in the simplified tree and require separate analysis as the architecture becomes more detailed.
+
 ## 5.7 FTA Logic and Interpretation
 
-The initiating faults on the left are connected by an OR gate because any one may cause hazardous actuator behaviour.
+The initiating faults on the left are connected by an **OR** gate because any one may produce hazardous actuator behaviour.
 
-The mitigation failures on the right are also connected by an OR gate.
+The mitigation failures on the right are also connected by an **OR** gate.
 
-The top-level AND gate shows that HE-01 occurs when hazardous actuator behaviour is present and the intended mitigation does not successfully control it.
+The top-level **AND** gate shows the intended safety argument: an actuator fault should not lead to HE-01 if the safety mechanisms detect and control it successfully.
+
+Communication and transmission faults are covered in the FMEA but are not shown as separate basic events in this simplified fault tree.
 
 ## 5.8 Link to Safety Requirements
 
-The FMEA and FTA support the requirements derived in Section 4. The main relationships are:
+The FMEA and FTA support the requirements derived in Section 4:
 
-- FSR-01 / FSR-02 address hazardous joint-velocity deviation and the required reaction.
-- FSR-04 / FSR-05 address unintended motor-current behaviour and torque-generation faults.
+- FSR-01 / FSR-02 address joint-velocity deviation and the required reaction.
+- FSR-04 / FSR-05 address motor-current deviation and torque-generation faults.
 - FSR-06 addresses inconsistency between motor-side and joint-side motion.
 - FSR-07 / FSR-08 address invalid or unavailable robot-level commands.
-- FSR-09 addresses the possibility that the normal control path itself is faulty.
+- FSR-09 provides a safety-reaction path that does not rely solely on normal control.
 - FSR-10 addresses invalid or unavailable safety-relevant sensing.
+- FSR-11 addresses unsafe actuator behaviour that may still be consistent with the commanded value.
+- FSR-12 addresses loss or unavailability of the Safety Monitor or independent torque-inhibit path.
 
 ## 5.9 Limitations
 
-This is a qualitative system-level analysis. It does not include component failure rates, FIT data, diagnostic coverage calculations, quantitative probability evaluation, or a complete dependent-failure analysis. These would require a more detailed hardware design and reliability data.
+This is a qualitative system-level analysis.
 
-The purpose of this analysis is to demonstrate the link between architecture, failure propagation, safety mechanisms and requirements for the selected hazardous event.
+It does not yet include:
 
-## 5.10 Related Project Artifacts
-
-- `05_FMEA.xlsx` — full focused FMEA working table
-- `05_fault_tree.drawio` — editable fault-tree source
-- `05_fault_tree.png` or `.svg` — exported fault-tree figure for GitHub and the final report
+- component failure-rate or FIT data
+- quantitative diagnostic coverage
+- safe / dangerous failure classification
+- achieved PL calculation
+- quantitative top-event probability
+- detailed common-cause failure analysis
+- complete latent-fault analysis
+- detailed failure analysis of the load-holding mechanism
