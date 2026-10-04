@@ -27,7 +27,7 @@ Included inside the boundary:
 - Voltage and temperature monitoring
 - Local safety monitoring
 - Independent torque-disable path
-- Optional joint brake
+- Provision for an independent load-holding mechanism / joint brake, if required by the final safety concept
 
 The physical joint output is included because the safety concern is not only what the electronics command, but what the knee actually does.
 
@@ -35,13 +35,13 @@ The physical joint output is included because the safety concern is not only wha
 
 The knee system interacts with the following robot-level systems.
 
-Whole-Body Motion Controller. Provides the requested joint behavior, for example desired joint position, velocity, torque, operating mode and enable / disable request. It is outside the knee system boundary because it coordinates the complete robot rather than only the knee.
+**Whole-Body Motion Controller.** Provides the requested joint behavior, for example desired joint position, velocity, torque, operating mode and enable / disable request. It is outside the knee system boundary because it coordinates the complete robot rather than only the knee.
 
-Robot Safety Supervisor. Coordinates robot-level reactions such as controlled stop, degraded operation, posture recovery and higher-level power isolation. The knee system reports fault and health status to this supervisor.
+**Robot Safety Supervisor.** Coordinates robot-level reactions such as controlled stop, degraded operation, posture recovery and higher-level power isolation. The knee system reports fault and health status to this supervisor.
 
-Robot Power System. Provides the actuator DC supply. For this demonstrator, a nominal actuator DC bus of approximately 48 V is assumed.
+**Robot Power System.** Provides the actuator DC supply. For this demonstrator, a nominal actuator DC bus of approximately 48 V is assumed.
 
-Robot Mechanical Structure and Environment. The knee is connected to the thigh and lower leg and is influenced by robot weight, payload, inertia, ground-reaction forces, disturbances from other joints and contact with the environment. These loads are treated as external inputs to the knee system.
+**Robot Mechanical Structure and Environment.** The knee is connected to the thigh and lower leg and is influenced by robot weight, payload, inertia, ground-reaction forces, disturbances from other joints and contact with the environment. These loads are treated as external inputs to the knee system.
 
 ![Figure 1 — System Context Diagram](../figures/01_system_context.png)
 
@@ -69,7 +69,7 @@ The system produces:
 - Actuator status
 - Diagnostic information
 - Detected fault status
-- Degraded / safe-state status
+- Degraded-operation / safety-reaction status
 
 ## 1.6 Functional Chain
 
@@ -99,9 +99,15 @@ This scenario is used throughout the hazard analysis, FMEA, FTA and verification
 
 ## 1.8 Important Safety Assumption
 
-Immediate torque removal is not assumed to be safe by default.
+Immediate torque removal is not assumed to be safe by default for a load-bearing knee.
 
-`Torque-off -> loss of joint support -> possible collapse`
+`Torque removal -> loss of knee support -> possible robot collapse`
+
+The required fault reaction therefore depends on which control functions remain trustworthy after the fault.
+
+Where normal control can no longer be trusted, torque inhibition may need to be combined with an independent means of maintaining or safely removing the joint load, such as a holding brake or coordinated robot-level support.
+
+The detailed holding mechanism is not designed in this demonstrator.
 
 ## 1.9 Initial Design Assumptions
 
@@ -110,9 +116,10 @@ Immediate torque removal is not assumed to be safe by default.
 3. Motor position and joint-output position are measured separately.
 4. Motor current is measured and available for control and diagnostics.
 5. The local knee controller cannot assume that commands from the whole-body controller are always correct.
-6. The safety-monitoring function should not rely completely on the same control path that may create the hazardous behavior.
-7. A single sensor fault should not automatically result in unrestricted actuator operation.
-8. Mechanical faults remain part of the safety analysis even if they cannot be fully mitigated electronically.
+6. Safety monitoring includes absolute actuator limits or a permitted operating envelope and therefore does not rely only on commanded-versus-measured deviation.
+7. The safety-monitoring function should not rely completely on the same control path that may create the hazardous behavior.
+8. A single sensor fault should not automatically result in unrestricted actuator operation.
+9. Mechanical faults remain part of the safety analysis even if they cannot be fully mitigated electronically.
 
 ## 1.10 Out of Scope
 
@@ -124,7 +131,7 @@ The following are not developed in detail:
 - Battery-pack safety
 - Full robot structural analysis
 - Cybersecurity
-- Complete brake design
+- Detailed design and sizing of the load-holding / brake mechanism
 - Full certification assessment
 - Detailed motor electromagnetic design
 
