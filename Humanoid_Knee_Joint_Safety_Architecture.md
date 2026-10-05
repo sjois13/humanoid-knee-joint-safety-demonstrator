@@ -49,7 +49,7 @@ The knee system interacts with the following robot-level systems.
 
 **Robot Mechanical Structure and Environment.** The knee is connected to the thigh and lower leg and is influenced by robot weight, payload, inertia, ground-reaction forces, disturbances from other joints and contact with the environment. These loads are treated as external inputs to the knee system.
 
-![Figure 1 — System Context Diagram](../figures/01_system_context.png)
+![Figure 1 — System Context Diagram](figures/01_system_context.png)
 
 ## 1.4 Main Inputs
 
