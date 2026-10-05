@@ -157,7 +157,7 @@ Detailed circuit design, processor selection, motor electromagnetic design and p
 
 ## 2.2 Architecture Overview
 
-![Figure 2 — Functional Architecture of the Knee Joint System](../figures/02_functional_architecture.png)
+![Figure 2 — Functional Architecture of the Knee Joint System](figures/02_functional_architecture.png)
 
 The architecture contains four main paths:
 
@@ -204,7 +204,7 @@ Faults in the power stage, motor or transmission can cause actual joint behaviou
 
 The architecture uses measurements from several physical points in the actuator.
 
-![Figure 3 — Feedback and Diagnostic Signals](../figures/03_feedback_diagnostic_signals.png)
+![Figure 3 — Feedback and Diagnostic Signals](figures/03_feedback_diagnostic_signals.png)
 
 | Signal | Used by | Architectural purpose |
 | --- | --- | --- |
