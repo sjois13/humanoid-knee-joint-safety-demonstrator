@@ -6,8 +6,6 @@ The project follows one hazardous event from system definition through safety re
 
 **HE-01 — Unintended or excessive knee motion while the humanoid is load-bearing and operating close to a person.**
 
-📄 [Download the complete PDF portfolio](pdf/Humanoid_Knee_Joint_Safety_Architecture.pdf)
-
 ## Standards Context
 
 The safety concept is developed with reference to machinery, robotics and drive functional-safety principles, including:
