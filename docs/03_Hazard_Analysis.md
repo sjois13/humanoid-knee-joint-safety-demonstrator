@@ -119,8 +119,6 @@ This result is provisional and depends strongly on the exposure assumption.
 
 If human exposure is frequent or prolonged rather than task-limited, the required performance level may increase and must be reassessed.
 
-No claim is made here that the current architecture already achieves PL d.
-
 ## 3.10 Scope and Limitations
 
 The analysis does not yet include:
@@ -133,4 +131,3 @@ The analysis does not yet include:
 - common-cause failure scoring
 - detailed holding-brake design
 
-The hazard analysis is used to derive the safety goal, safety requirements and fault-reaction concept for the selected hazardous event.erive the safety goal and safety requirements and to support the subsequent FMEA, FTA and verification concept.
