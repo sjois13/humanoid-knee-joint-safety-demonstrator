@@ -1,62 +1,45 @@
 # Humanoid Knee Joint Safety Demonstrator
 
-Safety architecture study for one load-bearing knee joint of an industrial humanoid robot.
+A personal system-safety study of one load-bearing knee joint of an industrial humanoid robot: hazard analysis, requirements, architecture, failure analysis and a fault-reaction concept.
 
-The project follows one hazardous event from system definition through safety requirements, failure analysis, fault reaction and verification planning:
+**Status:** concept-level analysis. No hardware has been built and no test evidence exists yet. Open points are listed at the end.
+
+**Author:** Sumukha Jois · [www.linkedin.com/in/sumukhajois]
+
+## The question this study works through
 
 **HE-01 — Unintended or excessive knee motion while the humanoid is load-bearing and operating close to a person.**
 
-## Standards Context
+For a load-bearing joint, what is the safe state? Removing actuator torque stops commanded motion, but it also removes support, and the knee can collapse. The study follows that question from system definition through requirements, failure analysis, fault reaction and verification planning.
 
-The safety concept is developed with reference to machinery, robotics and drive functional-safety principles, including:
+<!-- Add one diagram here, for example the reaction state machine or the architecture figure from diagrams/ -->
 
-- **ISO 10218** — industrial robot safety
-- **ISO 13849-1** — safety-related control systems and Performance Level concepts
-- **IEC 61800-5-2** — safety-related drive functions such as SLS, SS1 and STO
-- **IEC 61508** — general functional-safety principles
+## Main design ideas
 
-The current project does not claim compliance or certification to these standards.
+1. **Torque removal is not a complete safe reaction.** Torque inhibition and load holding are treated as separate functions. The reaction is chosen by which control and sensing functions remain trustworthy.
+2. **Two kinds of monitoring.** Command-versus-response monitoring catches an actuator that does not do what it is told. Command-independent limits (speed, torque-producing current, position) catch a command that is unsafe but executed correctly, which shows no deviation at all.
+3. **The safety path must be independent and supervised.** The Safety Monitor and the torque-inhibit path are kept separate from the normal controller, checked by self-test and watchdog, and analysed for shared resources (power, clock, processor).
 
-A provisional ISO 13849-style risk assessment is included for the selected operating scenario. Under the stated S/F/P assumptions, **PLr d** is used as a preliminary target for further development.
+## Preliminary safety functions
 
-No achieved Performance Level or ISO 13849 architecture category is claimed.
+| ID | Safety function | Preliminary PLr |
+|---|---|---|
+| SF-01 | Limit hazardous knee velocity and torque-related actuation to the permitted envelope | d |
+| SF-02 | Inhibit hazardous torque when normal control cannot be trusted | d |
+| SF-03 | Keep the load-bearing knee mechanically supported after loss of active torque | d |
 
-The fault-reaction concept also uses IEC 61800-5-2 terminology where useful:
+All three are preliminary and derived under the same S2 / F1 / P2 assumptions. Whether each one needs the same PLr is an open question.
 
-- **FSR-11 — Independent Safety Envelope Monitoring** is conceptually related to functions such as Safely-Limited Speed (SLS).
-- **FSR-09 — Independent Safety Reaction Path** provides the architectural basis for torque inhibition similar to STO-type functionality.
-- Controlled stopping concepts are compared with SS1 where the normal control path remains trustworthy.
-
-These are conceptual mappings only. The corresponding safety functions have not been implemented or validated as certified drive functions.
-
-## What is Covered
+## What is covered
 
 - system boundary and operating assumptions
 - knee-joint control and actuation architecture
 - hazard analysis and provisional risk assessment
 - safety goal and functional safety requirements
-- focused FMEA and qualitative fault tree
+- focused FMEA and fault tree, including mechanical transmission faults
 - safety monitoring and independent fault reaction
 - requirements-to-architecture traceability
 - verification and fault-injection planning
-- reaction-time concept
-
-## Main Design Idea
-
-The knee is treated as a local safety-critical actuator.
-
-The robot-level controller defines the intended motion, while the local knee system executes, monitors and constrains the actuator.
-
-The safety architecture uses both:
-
-- command-versus-response monitoring
-- command-independent safety limits
-
-This is important because an unsafe command may be executed correctly without producing a command-to-response deviation.
-
-Another key point is that torque removal is not automatically a complete safe reaction for a load-bearing joint.
-
-If actuator torque is removed, the knee may lose its ability to support the robot. The safety concept therefore separates **torque inhibition** from **load holding** and selects the reaction based on which control and sensing functions remain trustworthy.
 
 ## Documents
 
@@ -67,34 +50,46 @@ If actuator torque is removed, the knee may lose its ability to support the robo
 - [05 — FMEA and Fault Tree Analysis](docs/05_FMEA_FTA.md)
 - [06 — Safety Concept, Traceability and Verification](docs/06_Safety_Concept_Traceability_VV.md)
 
-Supporting files:
+Supporting files: [`analysis/`](analysis/) (focused FMEA and supporting analysis), [`diagrams/`](diagrams/) (architecture and safety diagrams).
 
-- [`analysis/`](analysis/) — focused FMEA and supporting analysis
-- [`diagrams/`](diagrams/) — architecture and safety diagrams
+## Standards context
 
-## Current Status
+Two standards shape the concept directly:
 
-The current work is a system-level safety demonstrator.
+- **ISO 13849-1:** a provisional risk assessment using the S/F/P risk graph. Under the stated assumptions, **PLr d** is used as a preliminary target. No achieved Performance Level and no architecture category is claimed.
+- **IEC 61800-5-2:** drive safety-function terminology, used as a conceptual mapping:
 
-The architecture, hazard analysis, safety requirements, FMEA, FTA, fault-reaction concept and verification plan are defined.
+| Concept in this study | Related drive safety function |
+|---|---|
+| Independent envelope monitoring (FSR-11) | SLS (safely-limited speed) |
+| Controlled stop, then hold under active control | SS2 and SOS |
+| Safe control of the holding brake | SBC (the function, not the mechanical brake) |
+| Independent torque inhibition (FSR-09) | STO |
 
-The following are still open:
+**ISO 10218** is the robot-level context for the human-proximity scenario; no mapping to it is attempted.
+
+This project does not claim compliance or certification to any standard. The mappings are conceptual, and none of the functions has been implemented or validated.
+
+## Open points
+
+**Numbers and evidence**
 
 - numerical safety limits and diagnostic thresholds
-- reaction-time budget
-- Safety Monitor independence
-- detailed torque-inhibit hardware
-- load-holding / brake design
-- quantitative diagnostic coverage
-- common-cause analysis
-- achieved ISO 13849 category / Performance Level
-- quantitative reliability analysis
+- reaction-time budget and the collapse-time estimate behind it
+- fault-injection simulation (planned: velocity-deviation monitoring, envelope monitoring, diagnostic reaction time)
 - physical verification evidence
 
-A small fault-injection simulation is planned to verify velocity-deviation monitoring, independent safety-envelope monitoring and diagnostic reaction time.
+**Design**
 
-## Tools and Development
+- Safety Monitor independence and detailed torque-inhibit hardware
+- load-holding / brake design
+- common-cause analysis
 
-The project was developed through system-level safety analysis, architecture work and iterative review.
+**Quantitative safety analysis**
 
-AI-assisted tools were used for documentation support and review. Engineering assumptions, architecture decisions, safety requirements and open technical points are kept explicit in the project documentation.
+- diagnostic coverage and reliability analysis
+- achieved ISO 13849 category and Performance Level
+
+## Tools and development
+
+The project was developed through system-level safety analysis, architecture work and iterative review. AI-assisted tools were used for documentation support and review. Engineering assumptions, architecture decisions, safety requirements and open technical points are kept explicit in the project documentation.
