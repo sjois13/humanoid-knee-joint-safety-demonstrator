@@ -50,7 +50,7 @@ All three are preliminary and derived under the same S2 / F1 / P2 assumptions. W
 - [05 — FMEA and Fault Tree Analysis](docs/05_FMEA_FTA.md)
 - [06 — Safety Concept, Traceability and Verification](docs/06_Safety_Concept_Traceability_VV.md)
 
-Supporting files: [`analysis/`](analysis/) (focused FMEA and supporting analysis), [`diagrams/`](diagrams/) (architecture and safety diagrams).
+Supporting files: [`analysis/`](analysis/) (focused FMEA and supporting analysis), [`figures/`](figures/) (architecture and safety diagrams).
 
 ## Standards context
 
